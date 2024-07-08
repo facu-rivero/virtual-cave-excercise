@@ -2,20 +2,18 @@ package com.example.springbootexercice.DTO;
 
 import com.example.springbootexercice.entity.RateEntity;
 
-public class RateEntityDTOMapper {
+public class RateEntityNewDTOMapper {
 
-    public static RateEntityDTO toDto(RateEntity rateEntity, String symbol, double decimalPrice) {
+    public static RateEntityNewDTO toDto(RateEntity rateEntity) {
 
-        return new RateEntityDTO(
+        return new RateEntityNewDTO(
                 rateEntity.getId(),
                 rateEntity.getBrand(),
                 rateEntity.getProduct(),
                 rateEntity.getStartDate(),
                 rateEntity.getEndDate(),
-                decimalPrice,
-                rateEntity.getCurrencyCode(),
-                symbol
+                rateEntity.getPrice(),
+                rateEntity.getCurrencyCode()
         );
     }
-
 }

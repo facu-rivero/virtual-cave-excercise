@@ -19,21 +19,17 @@ public class RateEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn (name = "brand_id", nullable = false)
-    private BrandEntity brandEntity;
-    @ManyToOne
-    @JoinColumn (name = "product_id", nullable = false)
-    private ProductEntity productEntity;
-    @Column (name = "START_DATE")
+    @Column (name ="BRAND_ID",nullable = false)
+    private Long brand;
+    @Column (name = "PRODUCT_ID",nullable = false)
+    private Long product;
+    @Column (name = "START_DATE",nullable = false)
     private LocalDate startDate;
-    @Column (name = "END_DATE")
+    @Column (name = "END_DATE",nullable = false)
     private LocalDate endDate;
-    @Column (name = "PRICE")
+    @Column (name = "PRICE",nullable = false)
     private Integer price;
-
-    @ManyToOne
-    @JoinColumn (name = "currencyCode_id", nullable = false)
-    private CurrencyCodeEntity currencyCode;
+    @Column (name = "CURRENCY_CODE",nullable = false)
+    private String currencyCode;
 
 }
